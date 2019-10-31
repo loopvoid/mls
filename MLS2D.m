@@ -1,6 +1,5 @@
 % two-DIMENSIONAL MLS APPROXIMATION
-% by Jin Jia
-%% Í¼ÏñµÈ²½³¤²ÉÑù
+%% å›¾åƒç­‰æ­¥é•¿é‡‡æ ·
 clc
 clear all
 
@@ -9,28 +8,28 @@ I=imread('22result.jpg');
 imshow(I);
 [row,col,chn]=size(I);
 % I=I(1:col,:,:);
-% ÉèÖÃ½Úµã×ø±ê
-step=10;%²½³¤
+% è®¾ç½®èŠ‚ç‚¹åæ ‡
+step=10;%æ­¥é•¿
 xII=1: step : row;
 yII=1: step : col;
 [xI,yI] = meshgrid(yII,xII);
 nnodes = size(xI,1)*size(yI,2);
-% ÉèÖÃÆÀ¹ÀµãµÄ×ø±ê
+% è®¾ç½®è¯„ä¼°ç‚¹çš„åæ ‡
 [x,y] = meshgrid(1: 1 : col,1: 1: row);
 
 npoints = size(x,1)*size(y,2);
-%Ö§³ÖÓò·¶Î§
+%æ”¯æŒåŸŸèŒƒå›´
 scale = 30;
-% È·¶¨Ã¿¸ö½ÚµãµÄÖ§³Ö°ë¾¶
+% ç¡®å®šæ¯ä¸ªèŠ‚ç‚¹çš„æ”¯æŒåŠå¾„
 dmI = scale *0.5* ones(1, nnodes);
 tic
-% ÆÀ¹ÀËùÓĞÆÀ¹ÀµãxµÄMLSĞÎ×´º¯Êı
+% è¯„ä¼°æ‰€æœ‰è¯„ä¼°ç‚¹xçš„MLSå½¢çŠ¶å‡½æ•°
 [PHI, DPHIx, DPHIy] = MLS2DShape(6, nnodes, xI,yI, npoints, x,y, dmI, 'GAUSS', 3.0 ); 
 toc
  
-% ÇúÏßÄâºÏ. y = peaks(x,y)
-ZII  =I(xII,yII,:);    % ½Úµãº¯ÊıÖµ 
-% z  =x.*exp(-x.^2- y.^2);% È·ÇĞµÄ½â¾ö·½°¸
+% æ›²çº¿æ‹Ÿåˆ. y = peaks(x,y)
+ZII  =I(xII,yII,:);    % èŠ‚ç‚¹å‡½æ•°å€¼ 
+% z  =x.*exp(-x.^2- y.^2);% ç¡®åˆ‡çš„è§£å†³æ–¹æ¡ˆ
 Zpoints=zeros(1,npoints);
 xh=zeros(1,npoints);
 yh=zeros(1,npoints);
@@ -45,8 +44,8 @@ for j=1:1
     ZI=ZII(:,:,j);
     for i=1:nnodes
         Znodes(1,i)=ZI(i);
-    end                        %½«¶şÎ¬Êı¾İ×ª»»ÎªÒ»Î¬Êı¾İ
-    zh = PHI *Znodes';  % ±Æ½üº¯Êı
+    end                        %å°†äºŒç»´æ•°æ®è½¬æ¢ä¸ºä¸€ç»´æ•°æ®
+    zh = PHI *Znodes';  % é€¼è¿‘å‡½æ•°
     II(:,:,j)=reshape(zh,row,col);
 end
 ZI=double(ZI);

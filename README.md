@@ -15,6 +15,7 @@ PS: It's an initial draft, no efficient enouth.(small image input is faster.)
 ### simple 2-d image fitting
 
 ![2d_fit](mls_cpp/MLS2D/test/22result_ch1.jpg)![bbbb_src](mls_cpp/MLS2D/test/bbbb_src.png)
+
 ![bbbb](mls_cpp/MLS2D/test/bbbb.jpg)![bbbb_png](mls_cpp/MLS2D/test/bbbb.png)
 
 Top is the orignial image on the left and it's 3-d image shown in Matlab on the right.
@@ -23,7 +24,8 @@ Botton it the mls output image and it's 3-d image shown in Matlab on the right.
 
 ### face  depth image fitting
 
-![img_8uc1](mls_cpp/MLS2D/test/img_8uc1.jpg)![img_8uc1_src](mls_cpp/MLS2D/test/img_8uc1_src.png)!
+![img_8uc1](mls_cpp/MLS2D/test/img_8uc1.jpg)![img_8uc1_src](mls_cpp/MLS2D/test/img_8uc1_src.png)
+
 ![img_8uc1_30_704](mls_cpp/MLS2D/test/img_8uc1_depth_radius_30_time_704s.jpg)![img_8uc1_30_704_fig](mls_cpp/MLS2D/test/img_8uc1_depth_radius_30_time_704s_fig.png)
 
 Top is the orignial face depth image on the left and it's 3-d image shown in Matlab on the right.
